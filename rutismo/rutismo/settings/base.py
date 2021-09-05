@@ -34,6 +34,7 @@ BASE_APPS = [
 LOCAL_APPS = [
 
     'apps.authentication',
+    'apps.rutismo',
 
 ]
 THIRD_APPS = [

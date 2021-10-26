@@ -1,0 +1,134 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    INVENTARIO JOSJEHI C.A | Listado de Articulos
+{% endblock titulo %}
+
+{% block body%}
+{% if articulos %}
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Listado de Articulos</strong>
+    </div>
+    <div class="table-stats order-table ov-h">
+        <table class="table">
+            <thead>
+                <tr>
+                  
+                  <th>Codigo</th>
+                  <th>Nombre</th>
+                  <th>Departamento</th>
+                  <th>Categoria</th>
+                  <th>Descripcion</th>
+                  <th>Cantidad</th>
+                  <th>Marca</th>
+                  <th>Color</th>
+                  <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for articulo in articulos %}
+                <tr>
+                  
+                  <td>{{ articulo.code }}</td>
+                  <td>{{ articulo.name }}</td>
+                  <td>{{ articulo.department }}</td>
+                  <td>{{ articulo.category}}</td>
+                  <td>{{ articulo.description }}</td>
+                  <td>{{ articulo.quantity }}</td>
+                  <td>{{ articulo.brand }}</td>
+                  <td>{{ articulo.color }}</td>
+                  <td>
+                    <a href="{% url 'articulo:editar_articulo' articulo.id %}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a href="{% url 'articulo:eliminar_articulo' articulo.id %}" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                  </td>
+                  
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+  <h1>No existen articulos  registrados</h1>
+{% endif %}
+
+<form method="POST">
+  {% csrf_token %}
+  {% if error %}
+    <h2>{{ error }}</h2>
+  {% else %}
+         <div class="card">
+          <div class="card-header">
+              <strong>Formulario de Registro</strong>
+          </div>
+          <div class="card-body card-block">
+              <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.code.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.code}}</div>
+                  </div>
+
+                  
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.name.label}}</div>
+                      <div class="col-12 col-md-9">{{  form.name}}</div>
+                 </div>
+                 
+                 
+                 <div class="row form-group">
+                       <div class="col col-md-3">{{  form.department.label }}</div>        
+                            <div class="col-12 col-md-9">{{  form.department}}</div>
+                        
+                </div>
+                     
+  
+                  <div class="row form-group">
+                        <div class="col col-md-3">{{  form.category.label }}</div>
+                        <div class="col-12 col-md-9">{{ form.category }}</div>
+                 </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.description.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.description}}</div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.quantity.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.quantity }}</div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.brand.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.brand}}</div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.color.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.color}}</div>
+                  </div>
+                  
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Registrar</button>
+                      <button type="reset" class="btn btn-danger"><a href="{% url 'articulo:listar_articulos'%}">Cancelar</a></button>
+                  </div>
+              </form>
+          </div>
+      </div>  
+  {% endif %}
+</form>
+<div class="modal fade" id="edicion" role="dialog">
+
+</div>
+
+{% block extrajs %}
+    
+{% endblock extrajs %}
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function open_modal_edicion(url){
+        $('#edicion').load(url, function(){
+            $(this).modal('show');
+        });
+    }
+</script>
+
+{% endblock body %}
+
+    

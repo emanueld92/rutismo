@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% block titulo %}
+  Inventario  | Registro de Articulo
+{% endblock titulo %}
+
+{% block body %}
+<form method="POST">
+  {% csrf_token %}
+  {% if error %}
+    <h2>{{ error }}</h2>
+  {% else %}
+    <div class="card">
+          <div class="card-header">
+              <strong>Formulario de Registro</strong>
+          </div>
+          <div class="card-body card-block">
+              <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.code.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.code}}</div>
+                  </div>
+
+                  
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.name.label}}</div>
+                      <div class="col-12 col-md-9">{{  form.name}}</div>
+                 </div>
+                 
+                 
+                 <div class="row form-group">
+                       <div class="col col-md-3">{{  form.department.label }}</div>        
+                            <div class="col-12 col-md-9">{{  form.department}}</div>
+                        
+                </div>
+                     
+  
+                  <div class="row form-group">
+                        <div class="col col-md-3">{{  form.category.label }}</div>
+                        <div class="col-12 col-md-9">{{ form.category }}</div>
+                 </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.description.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.description}}</div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.quantity.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.quantity }}</div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.brand.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.brand}}</div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col col-md-3">{{  form.color.label }}</div>
+                      <div class="col-12 col-md-9">{{  form.color}}</div>
+                  </div>
+                  
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Registrar</button>
+                      <button type="reset" class="btn btn-danger"><a href="{% url 'articulo:listar_articulos'%}">Cancelar</a></button>
+                  </div>
+              </form>
+          </div>
+      </div>  
+  {% endif %}
+</form>
+
+{% endblock body %}

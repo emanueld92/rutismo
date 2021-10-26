@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block titulo %}
+  Sistema de Inventario| Confirmacion Eliminar Articulo
+{% endblock titulo %}
+
+
+{% block body %}
+<form method="post">
+{% csrf_token %}
+    <p><strong>Desea Eliminar el Articulo  {{ object}} ?</strong></p>
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+
+</form>
+    
+{% endblock body %}
+    

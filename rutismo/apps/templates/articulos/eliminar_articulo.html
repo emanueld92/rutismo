@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block titulo %}
+  Eliminación de Articulo
+{% endblock titulo %}
+{% block body %}
+<form method="POST">
+  {% csrf_token %}
+  <h2>¿Desea elminar el registro {{ articulo.name }}?</h2>
+    <button type = "submit">Eliminar</button> 
+    <button type="reset" class="btn btn-danger">Cancelar</button>
+</form>
+
+{% endblock body %}

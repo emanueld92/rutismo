@@ -33,8 +33,8 @@ BASE_APPS = [
 
 LOCAL_APPS = [
 
-    'apps.authentication',
-    'apps.rutismo',
+    'apps.usuarios',
+
 
 ]
 THIRD_APPS = [
@@ -111,12 +111,12 @@ USE_L10N = True
 USE_TZ = True
 
 
-#Agregamos las urls que puedan hacerle peticiones de tipo Cors a django, en este caso Vuejs
+# Agregamos las urls que puedan hacerle peticiones de tipo Cors a django, en este caso Vuejs
 CORS_ORIGIN_WHITELIST = ["http://localhost:8080"]
 CORS_ALLOW_CREDENTIALS = True
 
 
-#configuration media root for manage to file
+# configuration media root for manage to file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # path to server local
 MEDIA_URL = 'http://localhost:8000/media/'  # URL for developer
 

@@ -21,7 +21,7 @@
 
 <body>
     <!-- Left Panel -->
-    <aside id="left-panel" class="left-panel">
+    <!-- <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu">
                 <ul class="nav navbar-nav">
@@ -29,44 +29,43 @@
                      <li class="menu-item-has-children dropdown">
                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Articulos</a>
                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="fa fa-plus"></i><a href="{% url 'articulo:crear_articulo' %}"> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
-                           <li><i class="fa fa-list"></i><a href="{% url 'articulo:listar_articulos' %}"> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
+                           <li><i class="fa fa-plus"></i><a href=""> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
+                           <li><i class="fa fa-list"></i><a href=""> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
                        </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-shopping-bag"></i>Categorias</a>
                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="fa fa-plus"></i><a href="{% url 'articulo:crear_categoria' %}"> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
-                           <li><i class="fa fa-list"></i><a href="{% url 'articulo:listar_categoria' %}"> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
+                           <li><i class="fa fa-plus"></i><a href=""> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
+                           <li><i class="fa fa-list"></i><a href=""> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
                        </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                        <a href="" class="dropdown-toggle" data-toggle="dropdown""><i class="fas fa-horse-head"></i>Clasificacion</a>
                        <ul class="sub-menu children dropdown-menu">
-                           <li><i class="fa fa-plus"></i><a href="{% url 'articulo:crear_departamento' %}"> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
-                           <li><i class="fa fa-list"></i><a href="{% url 'articulo:listar_departamento' %}"> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
+                           <li><i class="fa fa-plus"></i><a href=""> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
+                           <li><i class="fa fa-list"></i><a href=""> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
                        </ul>
                     </li>
                    
                 </ul>
             </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside>
+        <!-- </nav>
+    </aside> --> 
     <!-- /#left-panel -->
     <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="{% static 'images/logo.jpeg' %}" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="{% static 'images/logo.jpeg' %}" alt="Logo" ></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-            <div class="top-right">
-                <div class="header-menu">
-                    <div class="user-area dropdown float-right">
+    <header id="header" class="header">
+        <div class="top-right">
+     
+                <div class="col-sm-6">
+
+                    <a class="navbar-brand float-right" href="./"><img src="{% static 'images/logo.jpeg' %}" alt="Logo"></a>
+                    
+                    
+                    
+
+                    
+                    <div class="user-area dropdown float-left">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static 'images/admin.png' %}" alt="User Avatar">
                         </a>
@@ -76,10 +75,15 @@
                             <a class="nav-link" href=" {% url 'logout' %} "><i class="fa fa-power -off"></i>Salir</a>
                         </div>
                     </div>
-
+                    
                 </div>
-            </div>
-        </header>
+               
+              
+            
+        </div>
+    </header>
+    <div id="right-panel" class="panel">
+        <!-- Header-->
 
         <div class="content">
             <div class="animated fadeIn">
@@ -90,8 +94,8 @@
                             <div class="card bg-primary">
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0 text-light text-center">
-                                        <h1 class="text-light"> {{ user.username| upper }} BIENVENIDO Al SISTEMA DE INVENTARIO</h1>
-                                        <footer class="blockquote-footer text-light">"Un Inventario Bien organizado es la columna vertebral de una Empresa Exitosa" -<cite title="Neil Gaiman">Neil Gaiman</cite></footer>
+                                        <h1 class="text-light"> {{ user.username| upper }} BIENVENIDO Al SISTEMA RUTISMO WEB 3.0</h1>
+                                       
                                     </blockquote>
                                 </div>
                             </div>
@@ -107,7 +111,7 @@
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2021 Vet-System C.a
+                        Copyright &copy; 2021 RUTISMO.org
                     </div>
                     <div class="col-sm-6 text-right">
                         Designed by <a href="https://colorlib.com"></a>

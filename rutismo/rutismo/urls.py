@@ -21,11 +21,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     # URLS Authentications
+    path('user/', include('apps.usuarios.urls')),
 
+    # URLS APPS Rutismo
 
-    path('api/', include('apps.usuarios.urls')),
-
-
+    path('ruta/', include('apps.ruta.urls')),
 ]
 
 if settings.DEBUG:

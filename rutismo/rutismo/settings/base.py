@@ -34,20 +34,19 @@ BASE_APPS = [
 LOCAL_APPS = [
 
     'apps.usuarios',
+    'apps.ruta',
 
 
 ]
 THIRD_APPS = [
-    'corsheaders',
-    'rest_framework',
-    'django_rest_passwordreset',
+
     # 'django_filters',
 
 
 ]
 
 INSTALLED_APPS = BASE_APPS+LOCAL_APPS+THIRD_APPS
-AUTH_USER_MODEL = "authentication.CustomUser"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'rutismo.urls'
@@ -65,7 +64,7 @@ ROOT_URLCONF = 'rutismo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['apps/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

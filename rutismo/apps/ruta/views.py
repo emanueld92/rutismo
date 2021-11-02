@@ -4,8 +4,10 @@ from django.views.generic.edit import FormView
 # Create your views here.
 
 
-class Home(TemplateView):
+class Dasboard(TemplateView):
+
     template_name = "home.html"
+   
 
 
 class Elige(TemplateView):
@@ -21,7 +23,7 @@ class Estado(TemplateView):
 
 
 class Horarios(TemplateView):
-    template_name = "hararios.html"
+    template_name = "horarios.html"
 
 
 class Ayuda(TemplateView):

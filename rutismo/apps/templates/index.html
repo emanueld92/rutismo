@@ -20,117 +20,22 @@
 </head>
 
 <body>
-    <!-- Left Panel -->
-    <!-- <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div id="main-menu" class="main-menu">
-                <ul class="nav navbar-nav">
-                   <li class="active"><a href="{% url 'index' %}"><i class="menu-icon fa fa-home"></i>Inicio</a></li> 
-                     <li class="menu-item-has-children dropdown">
-                       <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list"></i>Articulos</a>
-                       <ul class="sub-menu children dropdown-menu">
-                           <li><i class="fa fa-plus"></i><a href=""> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
-                           <li><i class="fa fa-list"></i><a href=""> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
-                       </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                       <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-shopping-bag"></i>Categorias</a>
-                       <ul class="sub-menu children dropdown-menu">
-                           <li><i class="fa fa-plus"></i><a href=""> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
-                           <li><i class="fa fa-list"></i><a href=""> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
-                       </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                       <a href="" class="dropdown-toggle" data-toggle="dropdown""><i class="fas fa-horse-head"></i>Clasificacion</a>
-                       <ul class="sub-menu children dropdown-menu">
-                           <li><i class="fa fa-plus"></i><a href=""> <img src="{% static 'images/muestras/plus.png'%}" alt="Agregar Articulo" height="30%" width="30%"> Agregar</a></li>
-                           <li><i class="fa fa-list"></i><a href=""> <img src="{% static 'images/muestras/inventory.png'%}" alt="Listar Articulo" height="30%" width="30%">Listado</a></li>
-                       </ul>
-                    </li>
-                   
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        <!-- </nav>
-    </aside> --> 
-    <!-- /#left-panel -->
-    <!-- Right Panel -->
-    <header id="header" class="header">
-        <div class="top-right">
-     
-                <div class="col-sm-6">
-
-                    <a class="navbar-brand float-right" href="./"><img src="{% static 'images/logo.jpeg' %}" alt="Logo"></a>
-                    
-                    
-                    
-
-                    
-                    <div class="user-area dropdown float-left">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{% static 'images/admin.png' %}" alt="User Avatar">
-                        </a>
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Perfil</a>
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Administración</a>
-                            <a class="nav-link" href=" {% url 'logout' %} "><i class="fa fa-power -off"></i>Salir</a>
-                        </div>
-                    </div>
-                    
-                </div>
-               
-              
-            
-        </div>
-    </header>
-    <div id="right-panel" class="panel">
-        <!-- Header-->
-
-        <div class="content">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-lg-12">
-                      {% block body %}
-                        <div class="col-md-12 prueba">
-                            <div class="card bg-primary">
-                                <div class="card-body">
-                                    <blockquote class="blockquote mb-0 text-light text-center">
-                                        <h1 class="text-light"> {{ user.username| upper }} BIENVENIDO Al SISTEMA RUTISMO WEB 3.0</h1>
-                                       
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                      {% endblock body %}
-                </div>
-            </div>
-        </div>
-        <!-- /.content -->
-        <div class="clearfix"></div>
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="footer-inner bg-white">
-                <div class="row">
-                    <div class="col-sm-6">
-                        Copyright &copy; 2021 RUTISMO.org
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com"></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- /.site-footer -->
+    <div class="container">
+        <h1>Login</h1>
+        <a href="{% url 'login' %}">aqui</a>
     </div>
-    <!-- /#right-panel -->
-
+    <div class="container">
+        <h1>Estudiante</h1>
+        <a href="{% url 'dasboard' %}">aqui</a>
+    </div>
+    
+    
+    
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="{% static 'js/main.js' %}"></script>
-    
-    
-        
 </body>
 </html>

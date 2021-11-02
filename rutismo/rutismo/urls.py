@@ -19,14 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
     # URLS Authentications
-    path('user/', include('apps.usuarios.urls')),
+    path('', include('apps.usuarios.urls'), name='usuario'),
 
     # URLS APPS Rutismo
 
-    path('ruta/', include('apps.ruta.urls')),
+    path('ruta/', include('apps.ruta.urls'), name='ruta'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static('/media/', document_root=settings.MEDIA_ROOT)
+#if settings.DEBUG:
+ #   urlpatterns += static('/media/', document_root=settings.MEDIA_ROOT)

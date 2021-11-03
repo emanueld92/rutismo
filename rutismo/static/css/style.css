@@ -2096,6 +2096,8 @@ footer.site-footer {
     font-family: 'Open Sans';
     font-size: 14px;
     line-height: 1.5;
+    position: absolute;
+    
     padding: 2.45em 1.125em; }
     footer.site-footer .footer-inner a {
       color: #6a7074; }

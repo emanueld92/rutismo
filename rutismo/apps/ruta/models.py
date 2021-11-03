@@ -73,8 +73,19 @@ class Rutina(models.Model):
 class Bitacora(models.Model):
     """Model definition for bitacora."""
 
+    CONTENTO="CO"
+    TRISTE="TR"
+    ENFERMO="EF"
+    
+    ANIMO=[
+        (CONTENTO,"CONTENTO"),
+        (TRISTE, "TRISTE"),
+        (ENFERMO,"ENFERMO"),
+    ]
+
     # TODO: Define fields here
     id_bitacora = models.AutoField(primary_key=True)
-    fecha = models.DateField("Fecha", auto_now=False, auto_now_add=False)
+    fecha = models.DateField("Fecha", auto_now=True, auto_now_add=False)
     nombre_bitacora = models.CharField("Nombre Bitacora", max_length=100)
+    e_animo=models.CharField("Estado de Animo", max_length=20, choices=ANIMO, default=CONTENTO)
     tipo = models.CharField("Tipo", max_length=50)

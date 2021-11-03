@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block titulo %}Bienvenido al Sistema de Inventario {% endblock titulo %}</title>
+    <title>{% block titulo %}Bienvenido al Sistema Rutismo {% endblock titulo %}</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,15 +20,53 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'ruta:dasboard' %}">RUTISMO<span class="sr-only">(current)</span></a>
+            
+        </div>
+    </nav>
+    
+    
+    {% block Container %}
+    
+    
     <div class="container">
-        <h1>Login</h1>
-        <a href="{% url 'login' %}">aqui</a>
-    </div>
-    <div class="container">
-        <h1>Estudiante</h1>
-        <a href="{% url 'dasboard' %}">aqui</a>
+        <div class="row">
+            <div class="col-6">
+
+                <h1>Login</h1>
+                <a href="{% url 'usuario:login' %}">aqui</a>
+            </div>
+            <div class="col-6">
+                
+                <h1>Estudiante</h1>
+                <a href="{% url 'ruta:dasboard' %}">aqui</a>
+            </div>
+        </div>
     </div>
     
+    
+    {% endblock Container %}
+
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner bg-white">
+            <div class="row">
+                    <div class="col-sm-6">
+                        Copyright &copy; 2021 RUTISMO .org
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        Designed by <a href="https://colorlib.com">Adriana Aroa</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.site-footer -->
+    </div>
+ 
     
     
     <!-- Scripts -->

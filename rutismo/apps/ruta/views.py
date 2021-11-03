@@ -1,6 +1,9 @@
+from django.forms import fields
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView, FormView
+from django.urls import reverse_lazy
+from apps.ruta.models import Bitacora
 # Create your views here.
 
 
@@ -10,8 +13,10 @@ class Dasboard(TemplateView):
    
 
 
-class Elige(TemplateView):
-    template_name="elige.html"
+class Elige(CreateView):
+    model=Bitacora
+    fields=['e_animo']
+    success_url = reverse_lazy('ruta:dasboard')
     
     
 class Comenzar(TemplateView):

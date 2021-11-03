@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Elige::Estado de Animo
+{% endblock titulo %}
+    
+
+      {% block Container %}
+    <h1>hola {{ user.username| upper }}  Como te Sientes hoy?</h1>
+
+    <form method="post">{% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="guardar">
+        <input type="reset" value="Atras" >
+
+    </form>
+
+      {% endblock Container %}

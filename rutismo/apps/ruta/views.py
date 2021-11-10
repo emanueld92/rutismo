@@ -15,8 +15,13 @@ class Dasboard(TemplateView):
 
 class Elige(CreateView):
     model=Bitacora
-    fields=['e_animo']
+    fields=['nombre_bitacora','e_animo','tipo']
     success_url = reverse_lazy('ruta:dasboard')
+    def post(self, request, *args, **kwargs):
+        
+        print ("Estos son los argumentos",self.args, " Estos los los kgwar")
+        return super().post(request, *args, **kwargs)
+    
     
     
 class Comenzar(TemplateView):

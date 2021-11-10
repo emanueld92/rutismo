@@ -1,7 +1,8 @@
 
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-
+from django.conf import settings
+from django.contrib.staticfiles.urls import static
 from.views import *
 app_name = "ruta"
 
@@ -13,3 +14,4 @@ urlpatterns = [
     path('horarios/', login_required(Horarios.as_view()), name='horarios'),
     path('Ayuda/', login_required(Ayuda.as_view()), name='ayuda'),
 ]
+

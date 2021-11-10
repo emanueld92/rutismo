@@ -46,7 +46,7 @@ THIRD_APPS = [
 ]
 
 INSTALLED_APPS = BASE_APPS+LOCAL_APPS+THIRD_APPS
-
+AUTH_USER_MODEL = "usuarios.CustomUser"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -110,9 +110,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Agregamos las urls que puedan hacerle peticiones de tipo Cors a django, en este caso Vuejs
-CORS_ORIGIN_WHITELIST = ["http://localhost:8080"]
-CORS_ALLOW_CREDENTIALS = True
 
 
 # configuration media root for manage to file

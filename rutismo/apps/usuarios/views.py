@@ -19,7 +19,7 @@ class Inicio(TemplateView):
 
 
 class Login(FormView):
-    template_name = 'login.html'
+    template_name = 'login2.html'
     form_class = formularioLogin
     success_url = reverse_lazy('ruta:dasboard')
 

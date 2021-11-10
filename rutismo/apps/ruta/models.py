@@ -86,6 +86,6 @@ class Bitacora(models.Model):
     # TODO: Define fields here
     id_bitacora = models.AutoField(primary_key=True)
     fecha = models.DateField("Fecha", auto_now=True, auto_now_add=False)
-    nombre_bitacora = models.CharField("Nombre Bitacora", max_length=100)
+    nombre_bitacora = models.CharField("Nombre", max_length=100)
     e_animo=models.CharField("Estado de Animo", max_length=20, choices=ANIMO, default=CONTENTO)
     tipo = models.CharField("Tipo", max_length=50)

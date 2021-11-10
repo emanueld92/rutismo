@@ -27,7 +27,4 @@ urlpatterns = [
     # URLS APPS Rutismo
 
     path('ruta/', include('apps.ruta.urls'), name='ruta'),
-]
-
-#if settings.DEBUG:
- #   urlpatterns += static('/media/', document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

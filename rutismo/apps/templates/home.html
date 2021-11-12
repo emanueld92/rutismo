@@ -1,31 +1,69 @@
-{% extends 'index.html' %}
-
-{% block titulo %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
     RUTISMO:::HOME
-{% endblock titulo %}
+{% endblock title %}
     
-      {% block Container %}
-        
+      {% block container %}
+<nav class="navbar navbar-light gradient-custom-2" ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'ruta:dasboard' %}">
+      <img src="{% static 'images/logo.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-center">
+      RUTISMO
+    </a>
+    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ user.username| upper }}
+            
+    
+            <img src="{{ user.avatar.url}}" alt="" width="60" height="60" class="d-inline-block align-text-center">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="{% url 'usuario:logout' %}">Salir</a></li>
+          </ul>
+        </li>
+  </div>
+  
+</nav>   
     
     <H1>Este es el futuro home</H1>
+ 
+<div class="container justify-content-md-center">
+
     
     
-    <div class="container">
-        <a href="{% url 'ruta:comenzar' %}">comenzar</a>
+    <div class="row">
+        <div class="col-6">
+            <a href="{% url 'ruta:comenzar' %}">comenzar</a>
+        </div>
+        <div class="col-6">
+            <a href="{%  url 'ruta:elige'%}">elige</a>
+        </div>
     </div>
     
-    <div class="container">
-        <a href="{%  url 'ruta:elige'%}">elige</a>
+    <div class="row-cols-xs-4">
+        
+        <div class="col-xs-12">
+            <span class="clearfix"></span>
+            <div class=" center-block">
+
+                <a href="{%  url 'ruta:estado'%}">estado</a>
+            </div>
+        </div>
+        
     </div>
+    <div class="row">
+        
+        <div class="col-6">
+            <a href="{%  url 'ruta:horarios' %}">horarios</a>
+        </div>
+        <div class="col-6">
+            <a href="{%  url 'ruta:ayuda' %}">ayuda</a>
+        </div>
+    </div>
+</div>
+
+    {% endblock container %}
     
-    <div class="container">
-        <a href="{%  url 'ruta:estado'%}">estado</a>
-    </div>
-    
-    <div class="container">
-        <a href="{%  url 'ruta:horarios' %}">horarios</a>
-    </div>
-    <div class="container">
-        <a href="{%  url 'ruta:ayuda' %}">ayuda</a>
-    </div>
-      {% endblock Container %}

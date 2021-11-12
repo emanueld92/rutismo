@@ -99,7 +99,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-LANGUAGE_CODE = 'en-ve'
+LANGUAGE_CODE = 'es-ve'
 
 TIME_ZONE = 'UTC'
 
@@ -114,7 +114,7 @@ USE_TZ = True
 
 # configuration media root for manage to file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # path to server local
-MEDIA_URL = 'http://localhost:8000/media/'  # URL for developer
+MEDIA_URL = '/media/'  # URL for developer
 
 
 # Default primary key field type

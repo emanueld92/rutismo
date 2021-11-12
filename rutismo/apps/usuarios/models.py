@@ -3,7 +3,7 @@ from django.db import models
 
 
 def path_avatar(instance, filename):
-    return f'avatars/{instance.id}/{filename}'
+    return f'avatars/{instance.username}/{filename}'
 
 
 class CustomUser(AbstractUser):

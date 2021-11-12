@@ -6,11 +6,19 @@
     
 
       {% block container %}
-    <h1>hola {{ user.username| upper }}  Como te Sientes hoy?</h1>
+    <h1>Registro</h1>
 
     <form method="post">{% csrf_token %}
         
-        {{form.as_p }}
+        
+            
+        
+        <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input type="{{field.field.widget.input_type}}">
+            
+        </div>
+        {% endfor %}
         <input type="submit" value="guardar">
         <input type="reset" value="Atras" >
 

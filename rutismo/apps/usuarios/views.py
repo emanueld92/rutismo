@@ -7,9 +7,9 @@ from django.views.decorators.csrf import csrf_protect
 # Vista generica basaad en clases para usos de formularios
 from django.views.generic.edit import FormView
 from django.contrib.auth import login, logout
-from .forms import formularioLogin
+from .forms import formularioLogin, CustomUserCreationForm
 from django.views.generic import TemplateView, ListView, UpdateView, CreateView, DeleteView, View
-from ..ruta.views import Dasboard
+from .models import CustomUser
 
 # Create your views here.
 
@@ -19,7 +19,7 @@ class Inicio(TemplateView):
 
 
 class Login(FormView):
-    template_name = 'login2.html'
+    template_name = 'login.html'
     form_class = formularioLogin
     success_url = reverse_lazy('ruta:dasboard')
 
@@ -37,6 +37,20 @@ class Login(FormView):
         return super(Login, self).form_valid(form)
 
 
-def logoutUser(request):
-    logout(request)
-    return HttpResponseRedirect('/accounts/login/')
+class Logout(FormView):
+    success_url=reverse_lazy('usuario:index')
+
+    def dispatch(self,request,*args, **kwargs):
+        logout(request)
+        return HttpResponseRedirect(self.get_success_url())
+
+
+
+class CustomerUserCreateView(CreateView):
+    model = CustomUser
+    template_name = "register_user.html"
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy('usuario:login')
+    
+
+

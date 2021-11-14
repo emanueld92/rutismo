@@ -13,14 +13,14 @@
     </a>
     <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ user.username| upper }}
+            {{ user.first_name| upper }}
             
     
             <img src="{{ user.avatar.url}}" alt="" width="60" height="60" class="d-inline-block align-text-center">
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Registrar Estudiante</a></li>
+            <li><a class="dropdown-item" href="#">Lista de Estudiantes</a></li>
             <li><a class="dropdown-item" href="{% url 'usuario:logout' %}">Salir</a></li>
           </ul>
         </li>

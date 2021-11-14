@@ -52,5 +52,11 @@ class CustomerUserCreateView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('usuario:login')
     
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        if self.request.accepts('text/html'):
+            return response
+        else:
+            return (form.errors)
 
 

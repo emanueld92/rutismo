@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.base import Model
 from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ManyToManyField
-
+from ..usuarios.models import CustomUser
 
 # Create your models here.
 class Nino(models.Model):
@@ -26,7 +26,7 @@ class Nino(models.Model):
                               choices=GENEROS, default=MASCULINO)
     foto = models.ImageField("foto", upload_to='ninos',
                              height_field=None, width_field=None, max_length=None)
-
+    adulto = models.ForeignKey(CustomUser, on_delete=CASCADE,)
 
 class MApoyo(models.Model):
 

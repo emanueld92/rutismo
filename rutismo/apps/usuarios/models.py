@@ -1,3 +1,4 @@
+
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils import timezone
@@ -12,7 +13,7 @@ def path_avatar(instance, filename):
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     avatar = models.ImageField(
-        'Avatar', upload_to=path_avatar,blank=True )
+        'Avatar', upload_to=path_avatar,blank=True, null=True)
     first_name=models.CharField(blank=True, max_length=150, verbose_name='Nombre')
     last_name=models.CharField(blank=True, max_length=150, verbose_name='Apellido')
  

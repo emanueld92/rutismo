@@ -11,7 +11,7 @@ from django.contrib.auth.forms import UserCreationForm
 class formularioLogin(AuthenticationForm):
     
     class Meta:
-        model:CustomUser
+        model=CustomUser
     
     def __init__(self,*args,**kwargs):
         super(formularioLogin,self).__init__(*args, **kwargs)
@@ -57,7 +57,7 @@ class formularioLogin(AuthenticationForm):
 class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        print(super())
+    
         self.fields.pop('password')
         self.fields.pop('is_staff')
         self.fields.pop('last_login')
@@ -126,9 +126,6 @@ class CustomUserCreationForm(UserCreationForm):
 
         }
 
-    class Meta:
-        model = CustomUser
-        fields = '__all__'
 
 
 

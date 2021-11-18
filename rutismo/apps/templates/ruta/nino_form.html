@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% load static %}
+
+
+{% block container %}
+
+    <h1>hola {{ user.first_name| upper }}  Registro Nino</h1>
+
+    <form method="POST">{% csrf_token %}
+        {% if form.errors %}
+        <div class="col-12 help-text">
+          
+          {{ form.errors }}</h2>
+        </div><h2>
+      {% endif %}     
+      
+        
+        {{form.as_p }}
+        <input type="submit" value="guardar">
+        <input type="submit" value="Atras" href="{% url 'ruta:dasboard' %}"  >
+
+    </form>
+
+{% endblock container %}
+    

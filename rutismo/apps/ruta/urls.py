@@ -13,5 +13,8 @@ urlpatterns = [
     path('estado/', login_required(Estado.as_view()), name='estado'),
     path('horarios/', login_required(Horarios.as_view()), name='horarios'),
     path('Ayuda/', login_required(Ayuda.as_view()), name='ayuda'),
+    
+    
+    path('registro_nino/', login_required(CrearNino.as_view()), name='crear_nino'),
 ]
 

@@ -1,29 +1,40 @@
 from django.forms import fields
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.views.generic.edit import CreateView, FormView
+from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from apps.ruta.models import Bitacora
+from apps.ruta.models import Bitacora, Nino
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Nino
+from .forms import NinoForm
 # Create your views here.
 
 
 class Dasboard(TemplateView):
 
     template_name = "home.html"
-   
 
 
-class Elige(CreateView):
-    model=Bitacora
-    fields=['nombre_bitacora','e_animo','tipo']
+class Elige(LoginRequiredMixin, CreateView):
+    model = Bitacora
+    fields = ['e_animo']
     success_url = reverse_lazy('ruta:dasboard')
-    def post(self, request, *args, **kwargs):
-        
-        print ("Estos son los argumentos",self.args, " Estos los los kgwar")
-        return super().post(request, *args, **kwargs)
-    
-    
-    
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
+
+class CrearNino(LoginRequiredMixin, CreateView):
+    model = Nino
+    form_class = NinoForm
+    success_url = reverse_lazy('ruta:dasboard')
+
+    def form_valid(self, form):
+        form.instance.adulto = self.request.user
+        return super().form_valid(form)
+
+
 class Comenzar(TemplateView):
     template_name = "comenzar.html"
 

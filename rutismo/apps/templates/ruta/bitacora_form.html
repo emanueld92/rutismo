@@ -8,11 +8,11 @@
       {% block container %}
     <h1>hola {{ user.username| upper }}  Como te Sientes hoy?</h1>
 
-    <form method="post">{% csrf_token %}
+    <form method="POST">{% csrf_token %}
         
         {{form.as_p }}
         <input type="submit" value="guardar">
-        <input type="reset" value="Atras" >
+        <input type="submit" value="Atras" href="{% url 'ruta:dasboard' %}"  >
 
     </form>
 

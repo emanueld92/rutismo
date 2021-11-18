@@ -5,6 +5,9 @@ from django.db.models.fields.related import ManyToManyField
 from ..usuarios.models import CustomUser
 
 # Create your models here.
+
+def path_avatar(instance, filename):
+    return f'nino/{instance.nombre}/{filename}'
 class Nino(models.Model):
     MASCULINO = "M"
     FEMENINO = "F"
@@ -19,13 +22,12 @@ class Nino(models.Model):
     id_nino = models.AutoField(primary_key=True)
     update = models.DateField("update", auto_now=False, auto_now_add=True)
     nombre = models.CharField("nombre", max_length=50)
-    cedula = models.CharField("cedula", max_length=50, null=True, blank=True)
+    
     f_nacimiento = models.DateField(
         "Fecha de nacimiento", auto_now=False, auto_now_add=False)
     genero = models.CharField("genero", max_length=50,
                               choices=GENEROS, default=MASCULINO)
-    foto = models.ImageField("foto", upload_to='ninos',
-                             height_field=None, width_field=None, max_length=None)
+    foto = models.ImageField("foto", upload_to=path_avatar,blank=True)
     adulto = models.ForeignKey(CustomUser, on_delete=CASCADE,)
 
 class MApoyo(models.Model):
@@ -73,19 +75,20 @@ class Rutina(models.Model):
 class Bitacora(models.Model):
     """Model definition for bitacora."""
 
-    CONTENTO="CO"
-    TRISTE="TR"
-    ENFERMO="EF"
+    CONTENTO="CONTENTO"
+    TRISTE="TRISTE"
+    ENFERMO="ENFERMO"
     
     ANIMO=[
         (CONTENTO,"CONTENTO"),
         (TRISTE, "TRISTE"),
         (ENFERMO,"ENFERMO"),
     ]
+    
 
     # TODO: Define fields here
     id_bitacora = models.AutoField(primary_key=True)
-    fecha = models.DateField("Fecha", auto_now=True, auto_now_add=False)
-    nombre_bitacora = models.CharField("Nombre", max_length=100)
+    fecha = models.DateTimeField("Fecha", auto_now=True, auto_now_add=False)
+    created_by = models.ForeignKey(CustomUser, on_delete=CASCADE,)
     e_animo=models.CharField("Estado de Animo", max_length=20, choices=ANIMO, default=CONTENTO)
-    tipo = models.CharField("Tipo", max_length=50)
+   

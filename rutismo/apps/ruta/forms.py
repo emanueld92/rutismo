@@ -54,11 +54,12 @@ class NinoForm(forms.ModelForm):
                     'id': 'nombre',
                 }
             ),
-            'f_nacimiento': forms.SelectDateWidget(
-                attrs={
-                    'class':'form-control',
-                    'id':'f_nacimiento',
-                }
+            'f_nacimiento':  forms.DateField(
+                required=True,
+                input_formats=['%d-%m-%Y'],
+                widget=forms.DateTimeInput(attrs={"format": "DD-MM-YYYY ",
+                                               "pickTime": False,
+                                               "sideBySide": True})
                 
             ),
             'genero':forms.Select(

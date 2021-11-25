@@ -59,13 +59,13 @@ class CustomUserCreationForm(UserCreationForm):
         super().__init__(*args, **kwargs)
     
         self.fields.pop('password')
-        self.fields.pop('is_staff')
-        self.fields.pop('last_login')
-        self.fields.pop('date_joined')
-        self.fields.pop('groups')
-        self.fields.pop('is_active')
-        self.fields.pop('user_permissions')
-        self.fields.pop('is_superuser')
+        # self.fields.pop('is_staff')
+        # self.fields.pop('last_login')
+        # self.fields.pop('date_joined')
+        # self.fields.pop('groups')
+        # self.fields.pop('is_active')
+        # self.fields.pop('user_permissions')
+        # self.fields.pop('is_superuser')
         
     
 
@@ -93,10 +93,10 @@ class CustomUserCreationForm(UserCreationForm):
                     'id': 'email',
                 }
             ),
-            'password': forms.PasswordInput(
+            'password1': forms.PasswordInput(
                 attrs={
                     'class': 'form-control',
-                    'id': 'password',
+                    'id': 'password1',
 
                 }
             ),

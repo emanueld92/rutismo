@@ -14,12 +14,22 @@
         </div><h2>
       {% endif %}     
       
-        
-        {{form.as_p }}
+        {{ form.nombre }}
+            
+        {{ form.f_nacimiento }}
+ 
+   
         <input type="submit" value="guardar">
         <input type="submit" value="Atras" href="{% url 'ruta:dasboard' %}"  >
 
     </form>
+    <script>
+  $(function () {
+    $("#datetimepicker1").datetimepicker({
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  });
+</script>
 
 {% endblock container %}
     

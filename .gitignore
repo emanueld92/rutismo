@@ -2,6 +2,6 @@ client/
 .pytest_cache/
 __pycache__/
 **/.vscode/
-.env
+
 **/migrations/
 **/media/

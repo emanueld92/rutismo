@@ -15,7 +15,7 @@ class Dasboard(TemplateView):
     template_name = "home.html"
 
 
-class Elige(LoginRequiredMixin, CreateView):
+class Elige(CreateView):
     model = Bitacora
     fields = ['e_animo']
     success_url = reverse_lazy('ruta:dasboard')
@@ -25,11 +25,11 @@ class Elige(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class CrearNino(LoginRequiredMixin, CreateView):
+class CrearNino(CreateView):
     model = Nino
     form_class = NinoForm
     success_url = reverse_lazy('ruta:dasboard')
-
+    template_name = 'ruta/nino_form.html'
     def form_valid(self, form):
         form.instance.adulto = self.request.user
         return super().form_valid(form)

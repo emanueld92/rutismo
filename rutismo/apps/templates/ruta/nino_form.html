@@ -13,14 +13,14 @@
           {{ form.errors }}</h2>
         </div><h2>
       {% endif %}     
-      
-        {{ form.nombre }}
-            
-        {{ form.f_nacimiento }}
- 
+          
+          
+        {{ form.as_p }}
    
         <input type="submit" value="guardar">
-        <input type="submit" value="Atras" href="{% url 'ruta:dasboard' %}"  >
+
+        <button type="button" role="link" onclick="window.location='{% url 'ruta:dasboard' %}'">Atras</button>
+        
 
     </form>
     <script>

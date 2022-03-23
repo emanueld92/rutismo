@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+    
+    {% block container %}
+
+    <div class="col-lg-6">
+    <div class="card-body p-md-5 mx-md-4">
+    <div class="text-center">
+    <img src="{% static '/images/logo.png' %}" style="width: 140px;" alt="logo">
+    <h4 class="mt-1 mb-5 pb-1">Creando rutas para los buenos habitos</h4>
+    </div>
+    
+    <div class="containe mt-4">
+        <div class="row">
+
+            <div class=" col-6 container py-5 h-100 " style="background-color:beige;">
+                
+                    <h1>Login</h1>
+                    <a href="{% url 'usuario:login' %}">aqui</a>
+                
+            </div>
+            
+            <div class="col-6 container py-5 h-100" style="background-color: beige; border: coral 4pc">
+                
+                <h1>Niño</h1>
+                <a href="{% url 'ruta:dasboard' %}">aqui</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+        
+    {% endblock container %}
+        
+ 

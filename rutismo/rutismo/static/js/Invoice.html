@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .factura {
+            table-layout: fixed;
+        }
+
+        .fact-info>div>h5 {
+            font-weight: bold;
+        }
+
+        .factura>thead {
+            border-top: solid 3px #000;
+            border-bottom: 3px solid #000;
+        }
+
+        .factura>thead>tr>th:nth-child(2),
+        .factura>tbod>tr>td:nth-child(2) {
+            width: 300px;
+        }
+
+        .factura>thead>tr>th:nth-child(n+3) {
+            text-align: right;
+        }
+
+        .factura>tbody>tr>td:nth-child(n+3) {
+            text-align: right;
+        }
+
+        .factura>tfoot>tr>th,
+        .factura>tfoot>tr>th:nth-child(n+3) {
+            font-size: 24px;
+            text-align: right;
+        }
+
+        .cond {
+            border-top: solid 2px #000;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <div id="app" class="col-11">
+
+        <div class="row my-3">
+            <div class="col-10">
+                <h1>GymManager</h1>
+                <p>Av. Winston Churchill</p>
+                <p>Place Orleans 3er. nivel</p>
+                <p>local 312</p>
+            </div>
+            <div class="col-2">
+                <img src="~/images/Mil-Pasos_Negro.png" />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row fact-info mt-3">
+            <div class="col-3">
+                <h5>Bill to</h5>
+                <p>
+                    Mario Gonzales
+                </p>
+            </div>
+            <div class="col-3">
+                <h5>Send to</h5>
+                <p>
+                    Cotui, Sanchez Ramirez
+                    Santa Fe, #19
+                    arianmanuel75@gmail.com
+                </p>
+            </div>
+            <div class="col-3">
+                <h5>N° Invoice</h5>
+                <h5>Date</h5>
+                <h5>Due Date</h5>
+            </div>
+            <div class="col-3">
+                <h5>103</h5>
+                <p>09/05/2019</p>
+                <p>09/05/2019</p>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <table class="table table-borderless factura">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Class of Cha-Cha-Cha</td>
+                        <td>300.00</td>
+                        <td>300.00</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Class dof Salsa</td>
+                        <td>4,00.00</td>
+                        <td>1,200.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Total bill</th>
+                        <th>$1,500.00</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="cond row">
+            <div class="col-12 mt-3">
+                <h4>Conditions and forms of payment</h4>
+                <p>Payment must be made within 15 days</p>
+                <p>
+                    Banreserva Bank
+                    <br />
+                    IBAN: DO XX 0075 XXXX XX XX XXXX XXXX
+                    <br />
+                    Code SWIFT: BPDODOSXXXX
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

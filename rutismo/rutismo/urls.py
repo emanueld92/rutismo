@@ -19,7 +19,6 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import static
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
     # URLS Authentications
     path('', include('apps.usuarios.urls'), name='usuario'),

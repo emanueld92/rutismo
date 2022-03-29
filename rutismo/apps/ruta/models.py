@@ -27,7 +27,6 @@ class Nino(models.Model):
     id_nino = models.AutoField(primary_key=True)
     update = models.DateField("update", auto_now=False, auto_now_add=True)
     nombre = models.CharField("nombre", max_length=50)
-
     f_nacimiento = models.DateField(
         "Fecha de nacimiento", auto_now=False, auto_now_add=False)
     genero = models.CharField("genero", max_length=50,

@@ -32,13 +32,14 @@ class CrearNino(CreateView):
     form_class = NinoForm
     success_url = reverse_lazy('ruta:dasboard')
     template_name = 'ruta/nino_form.html'
+
     def form_valid(self, form):
         form.instance.adulto = self.request.user
         return super().form_valid(form)
 
 
 class Comenzar(TemplateView):
-    template_name = "comenzar.html"
+    template_name = "ruta/comenzar.html"
 
 
 class Estado(TemplateView):
@@ -50,7 +51,7 @@ class Horarios(TemplateView):
 
 
 class Ayuda(TemplateView):
-    template_name = "help.html"
+    template_name = "ruta/help.html"
 
 
 class ListadoNino(ListView):

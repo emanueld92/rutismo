@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block container %}
+
+
+    <h1>hola {{ user.first_name| upper }}  Listado Nino</h1>
+    {% for nino in Ninos %}
+
+    <img src="{{nino.foto.url}}" width="100" height="100">
+    <P>{{nino.nombre}}</p>
+        
+
+    {% endfor %}
+
+{% endblock container %}

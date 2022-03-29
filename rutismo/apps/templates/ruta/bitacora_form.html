@@ -1,19 +1,56 @@
 {% extends 'base.html' %}
-
 {% block title %}
     Elige::Estado de Animo
 {% endblock title %}
+{% load static %}
     
-
-      {% block container %}
-    <h1>hola {{ user.username| upper }}  Como te Sientes hoy?</h1>
-
-    <form method="POST">{% csrf_token %}
+    {% block container %}
+     <!-- menu sin imagen -->
+    
+    <div class="container mt-5">
+        <div class="row">
         
-        {{form.as_p }}
-        <input type="submit" value="guardar">
-        <input type="submit" value="Atras" href="{% url 'ruta:dasboard' %}"  >
+          <div class='col-8 mx-auto mt-5'>
+    <h1 class="text-center fw-bold text-primary my-5">Bienvenido {{ user.username| upper }}  Como Te Sientes Hoy?</h1>
+    <div class="ms-5 my-5 d-flex">
+        <div class='me-5'>
+          <form method="POST">{% csrf_token %}
+      
+              <center>
+               {{ form.as_p }} 
+        
+                <center><p class='h4 fw-bold'>Feliz</p></center>
+                <img  src="{% static 'images/feliz.png' %}" height="150 vh" >    
+              </div>
+            <div class='mx-5'>
+                <center><p class='h4 fw-bold'>Triste</p></center>
+                <img  src="{% static 'images/triste.png' %}" height="150 vh"> 
+                  </div>
+            <div class='ms-5'> 
+                <center><p class='h4 fw-bold'>Enfermo</p></center>
+                  <img src="{% static 'images/enfermo.png' %}" height="150 vh">    
+                </div>
+
+    
+              </div>
+              <center>
+        <input class='btn btn-primary' type="submit" value="guardar">
+        <a class='btn btn-danger' href="{% url 'ruta:dasboard' %}">Atras</a>
+    </center>
 
     </form>
+</div>
+</div>
 
+
+    </div>
+    <footer
+    class="pie-de-pagina bg-primary bg-opacity-25 text-center fixed-bottom"
+  >
+    <p class="m-0 py-3">Copyright @ 2021. Todos los derechos reservados</p>
+  </footer>
       {% endblock container %}
+
+
+
+    

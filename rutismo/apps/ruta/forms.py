@@ -1,11 +1,15 @@
+from curses import meta
+from dataclasses import field
 from logging import PlaceHolder
+from pyexpat import model
+
 from django import forms
 from django.db.models import fields
 from django.db.models.base import Model
 from django.db.models.fields import AutoField
 
 from django.forms.widgets import Select
-from .models import Nino
+from .models import Nino, Bitacora, MApoyo
 from django.forms import ModelForm
 
 

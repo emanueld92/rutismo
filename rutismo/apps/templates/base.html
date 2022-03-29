@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,6 +28,12 @@
         </title>
   </head>
   <style>
+    .bg-primary{
+      background-color:#c2daff !important;
+    }
+    .btn-primary{
+      
+    }
 
             .gradient-custom-2 {
                 /* fallback for old browsers */
@@ -52,10 +59,32 @@
         }
 </style>
   <body>
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top p-3 mb-5" ">
+        <div class="container">
+            <a href="{% url 'ruta:dasboard' %}"
+            ><img  src="{% static 'images/logo.png' %}" width="100px" height="60px"
+          /></a>
+          <ul class="navbar-nav ms-auto">
+              
+            {% if user.first_name != null %}
+            
+            <li class="nav-item  dropdown">
+              <a class="nav-link text-dark fw-bold fst-italic dropdown-toggle align-items-center ms-auto" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                
+                <img src="{{ user.avatar.url}}" alt="" width="60" height="60" class="rounded-circle">
 
-        
+                {{ user.first_name| upper }}
+              </a>
+              <ul class="dropdown-menu ms-auto" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'ruta:crear_nino'%}">Registrar Nino</a></li>
+                <li><a class="dropdown-item" href="#">Listado de Niños</a></li>
+                <li><a class="dropdown-item" href="{% url 'usuario:logout' %}">Salir</a></li>
+            </ul>
+        </div>
+            
+            {% endif %}
 
-    
+    </nav>  
     {% block container %}
     
     {% endblock container %}
@@ -64,17 +93,11 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <footer
+      class="pie-de-pagina bg-primary bg-opacity-25 text-center fixed-bottom"
+      >
+      <p class="m-0 py-3">Copyright @ 2021. Todos los derechos reservados</p>
+    </footer>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-
-    <!-- https://cdnjs.com/libraries/popper.js/2.5.4 -->
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
-    ></script> -->
-
-    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
   </body>
 </html>

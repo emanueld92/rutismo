@@ -1,9 +1,29 @@
 {% extends 'base.html' %}
-    
+{% load static %}
     {% block title %}
         Comenzaar:: Rutismo
     {% endblock title %}
         
       {% block container %}
-    <h1>Aqui se construye la seccion comenzar</h1>
+
+    <div class="container mt-5 pt-5">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center fw-bold text-primary mt-3 mb-1">Quien Eres?</h1>
+        </div>
+        <!-- !contenedor de la imagen de los ninos -->
+        <div class="col-2 mt-2">
+          <div class="card">
+            <img src="{{ user.avatar.url}}" height="200 hv" alt="">
+            <div class="card-body">
+              <center>
+              <h5 class="card-title">{{ user.first_name| upper }}</h5>
+            </center>
+            </div>
+          </div>
+        </div>
+<!-- !aca termina -->
+
+      </div>
+    </div>
       {% endblock container %}

@@ -27,10 +27,7 @@ BASE_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'widget_tweaks',
-=======
->>>>>>> 4df6acbcd160a72c2f5a28f63b8ae348871fd7fc
 
 
 ]
@@ -114,20 +111,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-<<<<<<< HEAD
 # configuration media root for manage to file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # path to server local
 MEDIA_URL = '/media/'  # URL for developer
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-=======
-
-
-# configuration media root for manage to file
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # path to server local
-MEDIA_URL = '/media/'  # URL for developer
-
->>>>>>> 4df6acbcd160a72c2f5a28f63b8ae348871fd7fc
 
 # Default primary key field type
 

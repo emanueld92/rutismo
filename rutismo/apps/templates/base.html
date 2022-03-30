@@ -57,6 +57,12 @@
                 border-bottom-right-radius: .3rem;
             }
         }
+        .abs-center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+        }
 </style>
   <body>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top p-3 mb-5" ">
@@ -84,10 +90,12 @@
             
             {% endif %}
 
-    </nav>  
-    {% block container %}
-    
-    {% endblock container %}
+    </nav>
+    <div class="abs-center">
+      {% block container %}
+      
+      {% endblock container %}
+    </div>
         
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -99,7 +107,7 @@
       <p class="m-0 py-3">Copyright @ 2021. Todos los derechos reservados
         <a href="{%  url 'ruta:ayuda' %}" >Ayuda</a>
       </p>
-    </footer>
+    </footer> 
 
   </body>
 </html>

@@ -3,10 +3,8 @@
 
 
 {% block container %}
-
-    <h1>hola {{ user.first_name| upper }}  Registro Nino</h1>
-
     <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+      <h1>Bienvenido {{ user.first_name| upper }}, Registro de Niños</h1><br>
       {% if error %}  
         <div class="col-12 help-text">
           
@@ -16,11 +14,12 @@
           
           
         {{ form.as_p }}
-   
-        <input type="submit" value="guardar">
 
-        <button type="button" role="link" onclick="window.location='{% url 'ruta:dasboard' %}'">Atras</button>
-        
+        <div style="text-align: center;">
+          <input class="btn btn-primary" type="submit" value="Guardar">
+
+          <button class="btn btn-danger" type="button" role="link" onclick="window.location='{% url 'ruta:dasboard' %}'">Atras</button>
+        </div>
 
     </form>
     <script>
@@ -29,7 +28,7 @@
       format: 'DD/MM/YYYY HH:mm',
     });
   });
-</script>
+</script> 
 
 {% endblock container %}
     
